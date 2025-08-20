@@ -9,7 +9,7 @@ export default async function main(uiBuilder: UIBuilder, { t }) {
             form.tableSelect('totable', { label: '选择插入表' }),
             form.fieldSelect('tofield', { label: '选择字段',filterByTypes:[FieldType.Text], sourceTable: 'totable', multiple: true }),
         ],
-        buttons: ['确定', '取消'],
+        buttons: ['确定'],
     }), async ({ key, values }) => {
         const { table, field, totable, tofield } = values;
         uiBuilder.showLoading('0%');
