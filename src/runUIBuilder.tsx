@@ -40,8 +40,8 @@ export default async function main(uiBuilder: UIBuilder, { t }) {
                 await Promise.all(fieldItems.map(async (fieldItem, index) => {
                     const fieldval = await fieldItem.getValue(recordId);
                     const fieldname = fieldNames[index];
-                    record.set(fieldname, fieldval[0].text);
-                    recordname += fieldval[0].text;
+                    record.set(fieldname, fieldval?fieldval[0].text:"");
+                    recordname += fieldval?fieldval[0].text:"";
                 }));
                 
                 return { recordname, record };
